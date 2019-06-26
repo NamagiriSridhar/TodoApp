@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+	<html>
+	<head th:replace="/fragments/styling :: head-style">
+	</head>
+	<body class="m-5">
+		<div th:replace="/fragments/styling :: jumbotron"></div>
+ 		<a th:href="@{/}" class="btn btn-warning btn-sm">Go home</a>
+ 		<h3>Todo item submitted:</h3>
+		<h5 th:text="'Title: '+${todo.title}" ></h5>
+		<h5 th:text="'Description: '+${todo.description}"></h5>
+		<h5 th:text="'Creator: '+${todo.creator}"></h5>
+		<h5 th:text="'Status: '+${todo.status}"></h5>	
+		<div th:replace="/fragments/styling :: body-links"></div>	
+	</body>
+</html>

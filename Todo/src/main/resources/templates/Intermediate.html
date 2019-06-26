@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head th:replace="/fragments/styling :: head-style">
+	</head>
+	<body class="m-5">
+		<div th:replace="/fragments/styling :: jumbotron"></div>
+ 		<a th:href="@{/}" class="btn btn-warning btn-sm">Go home</a>
+		<form method="GET" th:action="@{/steps/update}"  th:object="${todo}">
+			<select th:field="*{id}"><!-- Only the id property is set in this todo object returned -->
+				<option th:each="todo: ${todos}" th:text="${todo.id}" th:value="${todo.id}"></option>		
+			</select>
+			<button class="btn btn-info btn-lg">Select the todo ID you want to update</button>
+		</form>
+		<div th:replace="/fragments/styling :: body-links"></div>	
+</body>
+</html>

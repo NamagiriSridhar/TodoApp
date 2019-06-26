@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head th:replace="/fragments/styling :: head-style">
+	</head>
+	<body class="m-5">
+		<div th:replace="/fragments/styling :: jumbotron"></div>
+ 		<a th:href="@{/}" class="btn btn-warning btn-sm">Go home</a>
+ 		<h3>Create a Todo item</h3>
+ 		
+		<form method="POST" th:action="@{/create}" th:object="${todo}">
+		 <div class="form-group">
+			 <label for="title">Title: </label>
+      	     <input type="text" th:field="*{title}" class="form-control"/>
+      	 </div>
+      	 <div class="form-group">
+      	 	 <label for="description">Description: </label>
+      	     <textarea th:field="*{description}" rows="3" cols="30" class="form-control"></textarea>
+      	 </div>   
+      	 <div class="form-group">
+      	 	 <label for="creator">Creator: </label>
+      	     <input type="text" th:field="*{creator}"class="form-control"/>
+      	 </div>
+      	 <div class="form-group">
+      	 	 <label for="status">Status: </label>
+             <div th:each="item: ${T(todos.domain.Todo.Status).values()} ">
+             	<input type="radio" th:field="*{status}" th:value="${item}"
+            	th:text="${item}" class="form-control"/>
+            </div>
+         </div>
+            <button class="btn btn-primary">Submit your todo</button>           
+		</form>
+		<div th:replace="/fragments/styling :: body-links"></div>
+	</body>
+</html>	

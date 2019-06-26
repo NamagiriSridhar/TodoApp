@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head th:replace="/fragments/styling :: head-style">
+	</head>
+	<body class="m-5">
+		<div th:replace="/fragments/styling :: jumbotron"></div>
+		<h1><span class="badge badge-info">Choose one</span></h1>
+		<h3><a th:href="@{/create}"><span class="badge badge-info">1.Create Todo Item</span></a></h3>
+		<h3><a th:href="@{/steps/intermediate}"><span class="badge badge-info">2.Update Todo Item</span></a></h3>
+		<div th:replace="/fragments/styling :: body-links"></div>	
+	</body>
+</html>
+
+<!-- gotta learn to align center using bootstrap
+	 why css not working
+	 all button styles to css too 
+	 home button to fragments
+ -->
